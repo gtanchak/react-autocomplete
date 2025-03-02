@@ -1,7 +1,13 @@
+import ListItem from "./ListItem";
 import useAutocomplete, { AutocompleteProps } from "./useAutocomplete";
 
-const Autocomplete = ({ url }: AutocompleteProps) => {
-  const { result, setSearchText, searchText } = useAutocomplete({ url });
+const Autocomplete = ({ url, options, mode }: AutocompleteProps) => {
+  const { result, setSearchText, searchText } = useAutocomplete({
+    url,
+    options,
+    mode,
+  });
+
   return (
     <div>
       <input
@@ -10,11 +16,7 @@ const Autocomplete = ({ url }: AutocompleteProps) => {
         onChange={(e) => setSearchText(e.target.value)}
       />
       <div>
-        <ul>
-          {result?.map((item: any) => (
-            <li>{item?.title}</li>
-          ))}
-        </ul>
+        <ListItem result={result} />
       </div>
     </div>
   );

@@ -2,9 +2,18 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { Autocomplete } from "./components";
 
+const data = [
+  { value: "p1", label: "Product1" },
+  { value: "p2", label: "Product2" },
+];
+
 const App = () => (
   <>
-    <Autocomplete url="https://dummyjson.com/products/search?q=" />
+    {/* <Autocomplete
+      mode="server"
+      url="https://dummyjson.com/products/search?q="
+    /> */}
+    <Autocomplete mode="client" options={data} />
   </>
 );
 
