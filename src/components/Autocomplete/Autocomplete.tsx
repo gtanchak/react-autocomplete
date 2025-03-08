@@ -1,7 +1,13 @@
 import ListItem from "./ListItem";
 import useAutocomplete, { AutocompleteProps } from "./useAutocomplete";
 
-const Autocomplete = ({ url, options, mode }: AutocompleteProps) => {
+const Autocomplete = ({
+  url,
+  options,
+  mode,
+  inputClass,
+  listClass,
+}: AutocompleteProps) => {
   const { result, setSearchText, searchText } = useAutocomplete({
     url,
     options,
@@ -14,8 +20,9 @@ const Autocomplete = ({ url, options, mode }: AutocompleteProps) => {
         type="text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
+        className={inputClass}
       />
-      <div>
+      <div className={listClass}>
         <ListItem result={result} />
       </div>
     </div>

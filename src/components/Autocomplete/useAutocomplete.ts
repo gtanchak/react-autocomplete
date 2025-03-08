@@ -19,7 +19,15 @@ export interface AutocompleteProps {
    * The dataset used for client-side filtering.
    * Each item consists of a `label` (display text) and a `value` (underlying identifier).
    */
-  options: Array<{ label: string; value: string }>;
+  options?: Array<{ label: string; value: string }>;
+  /**
+   * To update the style of the input
+   */
+  inputClass?: string;
+  /**
+   * To update the style of the list
+   */
+  listClass?: string;
 }
 
 type ClientOption = { label: string; value: string };
