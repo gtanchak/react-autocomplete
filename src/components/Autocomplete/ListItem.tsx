@@ -2,7 +2,7 @@ const ListItem = ({ result }: any) => {
   return (
     <ul>
       {result?.map((item: any) => (
-        <li>{item?.label}</li>
+        <li>{item?.title}</li>
       ))}
     </ul>
   );
